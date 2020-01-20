@@ -14,6 +14,8 @@ Your website should have the following technical functionality:
 # User Stories
 
 ## Setup instructions; 
+- cd habit_tracker
 - npm install 
 - cd src/seeds
 - run node users.js
+- npm start
