@@ -12,3 +12,8 @@ Your website should have the following technical functionality:
         Developers should host a database to store the daily information about users locally.
 
 # User Stories
+
+## Setup instructions; 
+- npm install 
+- cd src/seeds
+- run node users.js
