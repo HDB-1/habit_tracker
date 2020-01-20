@@ -5,7 +5,7 @@ const url = 'mongodb://localhost:27017/';
 
 
 
-function Users() {
+export function allUsers() {
     MongoClient.connect(url, function(err, db) {
         if(err) throw err;
         const dbo = db.db('habit_tracker');
