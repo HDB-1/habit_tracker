@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Login should render correctly 1`] = `
+<div>
+  <h3>
+    Or if you're a first-time visitor, sign up below!
+  </h3>
+  <form>
+    <label
+      for="userName"
+    >
+      Username
+      <input
+        className="userName"
+        name="userName"
+        type="text"
+      />
+    </label>
+    <label
+      for="password"
+    >
+      Password
+      <input
+        className="password"
+        name="password"
+        type="text"
+      />
+    </label>
+    <label
+      for="firstName"
+    >
+      First Name
+      <input
+        className="firstName"
+        name="fn"
+        type="text"
+      />
+    </label>
+    <label
+      for="lastName"
+    >
+      Last Name
+      <input
+        className="lastName"
+        name="ln"
+        type="text"
+      />
+    </label>
+    <button
+      id="signUpButton"
+      type="submit"
+    >
+      Sign up
+    </button>
+  </form>
+</div>
+`;

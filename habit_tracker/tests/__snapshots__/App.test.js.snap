@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow app should render correctly 1`] = `
+<BrowserRouter>
+  <h1>
+    Welcome to your favorite habit tracker!
+  </h1>
+  <Login />
+  <Signup />
+  <div />
+</BrowserRouter>
+`;
