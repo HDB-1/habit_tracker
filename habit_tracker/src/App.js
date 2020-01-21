@@ -7,22 +7,6 @@ const url = 'mongodb://localhost:27017';
 
 export class App extends Component {
 
-  getAllUsers() {
-    MongoClient.connect(url, function(err, db) {
-        if(err) throw err;
-        const dbo = db.db('habit_tracker');
-        dbo.collection('users').find({}).toArray(function(err, result) {
-            if (err) throw err;
-            this.setState({userInfo : result})
-            db.close();
-        });
-    }); 
-}
-
-  componentDidMount(){
-    this.getAllUsers()
-  }
-
   render() {
     return (
       <Router>
