@@ -5,6 +5,7 @@ import Signup from './components/Signup'
 import MongoClient from 'mongodb'
 import axios from 'axios';
 import AccountOverview from './containers/AccountOverview'
+import { resolve } from 'dns'
 const url = 'mongodb://localhost:27017';
 
 export class App extends Component {
@@ -43,12 +44,26 @@ export class App extends Component {
     })
   }
 
+  signupNewUser = (submittedDetails) => {
+    console.log(submittedDetails)
+    axios.post('http://localhost:4000/users/add', {
+      fn: submittedDetails.fn,
+      ln: submittedDetails.ln,
+      username: submittedDetails.username,
+      password: submittedDetails.password
+    })
+    .then((response) => {
+      resolve(response)
+    })
+    .then(this.setState({currentUser: submittedDetails}))
+  }
+
   render() {
     return (
       <Router>
         <h1>Welcome to your favorite habit tracker!</h1>
         {!this.state.currentUser ? <Login checkCredentials={this.checkCredentials}/> : null}
-        {!this.state.currentUser ? <Signup />: null}
+        {!this.state.currentUser ? <Signup signup={this.signupNewUser}/>: null}
       <div>
         {this.state.currentUser ? <AccountOverview  userInfo = {this.state.currentUser}/> : 'not currently logged in' }
       </div>
