@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import MongoClient from 'mongodb'
 import axios from 'axios';
+import AccountOverview from './containers/AccountOverview'
 const url = 'mongodb://localhost:27017';
 
 export class App extends Component {
@@ -31,14 +32,12 @@ export class App extends Component {
   }
   
   checkCredentials = (inputUsername, inputPassword) => {
-    console.log('running')
     axios.get('http://localhost:4000/users/' + inputUsername)
     .then((result) => {
       console.log(result.data[0].password)
       this.setState({enteredDetails: result.data})
       if (result.data[0].password === inputPassword) {
-        this.setState({currentUser: inputUsername})
-        console.log('well done')
+        this.setState({currentUser: result.data[0]})
       }
     })
   }
@@ -47,10 +46,10 @@ export class App extends Component {
     return (
       <Router>
         <h1>Welcome to your favorite habit tracker!</h1>
-        <Login checkCredentials={this.checkCredentials}/>
-        <Signup />
+        {!this.state.currentUser ? <Login checkCredentials={this.checkCredentials}/> : null}
+        {!this.state.currentUser ? <Signup />: null}
       <div>
-        
+        {this.state.currentUser ? <AccountOverview  userInfo = {this.state.currentUser}/> : 'not currently logged in' }
       </div>
       </Router>
     )
