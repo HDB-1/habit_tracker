@@ -23,8 +23,9 @@ const data = [{
 mongoClient.connect(url, function(err, db) {
     if (err) {
         throw err;
-    } 
+    }
     let dbo = db.db('habit_tracker');
+    dbo.collection('users').drop();
     dbo.collection('users').insertMany(data, function (err, response) {
         if (err) {
             throw err;

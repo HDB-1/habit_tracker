@@ -27,6 +27,8 @@ export class App extends Component {
     })
   }
 
+  
+
   componentDidMount(){
     this.getAllUsers();
   }
@@ -34,7 +36,6 @@ export class App extends Component {
   checkCredentials = (inputUsername, inputPassword) => {
     axios.get('http://localhost:4000/users/' + inputUsername)
     .then((result) => {
-      console.log(result.data[0].password)
       this.setState({enteredDetails: result.data})
       if (result.data[0].password === inputPassword) {
         this.setState({currentUser: result.data[0]})
