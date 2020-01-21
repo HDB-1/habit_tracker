@@ -7,7 +7,7 @@ const data = [{
     frequency: 'monthly',
     completed: false,
     isPriority: false,
-    last_completed: '2019-12-16T14:34:43.432Z', //date bit might need touching up
+    lastCompleted: '2019-12-16T14:34:43.432Z', //date bit might need touching up
     streak: 0
 },
 {
@@ -16,7 +16,7 @@ const data = [{
     frequency: 'daily',
     completed: false,
     isPriority: true,
-    last_completed: '2020-01-20T14:34:43.432Z', //date bit might need touching up
+    lastCompleted: '2020-01-20T14:34:43.432Z', //date bit might need touching up
     streak: 2
 },
 {
@@ -25,7 +25,7 @@ const data = [{
     frequency: 'weekly',
     completed: true,
     isPriority: true,
-    last_completed: '2020-01-18T11:34:43.432Z', //date bit might need touching up
+    lastCompleted: '2020-01-18T11:34:43.432Z', //date bit might need touching up
     streak: 1
 },
 {
@@ -34,7 +34,7 @@ const data = [{
     frequency: 'daily',
     completed: false,
     isPriority: false,
-    last_completed: '2020-01-20T14:34:43.432Z', //date bit might need touching up
+    lastCompleted: '2020-01-20T14:34:43.432Z', //date bit might need touching up
     streak: 1
 },
 {
@@ -43,7 +43,7 @@ const data = [{
     frequency: 'daily',
     completed: true,
     isPriority: true,
-    last_completed: '2020-01-21T13:43:43.432Z', //date bit might need touching up
+    lastCompleted: '2020-01-21T13:43:43.432Z', //date bit might need touching up
     streak: 20
 },
 {
@@ -52,7 +52,7 @@ const data = [{
     frequency: 'weekly',
     completed: false,
     isPriority: true,
-    last_completed: '2020-01-13T13:43:43.432Z', //date bit might need touching up
+    lastCompleted: '2020-01-13T13:43:43.432Z', //date bit might need touching up
     streak: 0
 }
 ]

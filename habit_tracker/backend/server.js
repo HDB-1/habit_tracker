@@ -4,9 +4,14 @@ const bodyParser = require('body-parser');
 const cors = require ('cors')
 const mongoose = require('mongoose')
 const userRoutes = express.Router();
+const activityRoutes = express.Router();
 const PORT = 4000;
 
 let User = require('./models/user.model')
+let Activity = require('./models/activities.model')
+
+app.use('/users', userRoutes);
+app.use('/activities', activityRoutes)
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -42,19 +47,30 @@ userRoutes.route('/:username').get((req, res) => {
 })
 
 userRoutes.route('/add').post((req, res) => {
-        let user = new User(req.body)
-        console.log(req.body)
-        user.save()
-        .then((users) => {
-            res.status(200).json({'user' : 'user added successfully'})
-            res.json(users)
-        })
-        .catch((err) => {
-            res.status(400).json('Error: ' + err);
-        })
+    let user = new User(req.body)
+    console.log(req.body)
+    user.save()
+    .then((users) => {
+        res.status(200).json({'user' : 'user added successfully'})
+        res.json(users)
     })
+    .catch((err) => {
+        res.status(400).json('Error: ' + err);
+    })
+})
 
-app.use('/users', userRoutes);
+activityRoutes.route('/:username').get((req, res) => {
+    Activity.find({username : req.params.username})
+    .then((activities) => {
+        res.json(activities)
+    })
+    .catch((err) => {
+        res.status(400).json('Error: ' + err)
+    })
+})
+
+
+
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
