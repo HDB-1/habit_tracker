@@ -23,13 +23,23 @@ connection.once('open', function() {
 userRoutes.route('/').get((req, res) => {
         User.find()
         .then((users) => {
-            console.log('asdklfjadsfj aodsj adf ij')
             res.json(users)
         })
         .catch((err) => {
             res.status(400).json('Error: ' + err);
         })
     })
+    
+// Route for validating user details
+userRoutes.route('/:username').get((req, res) => {
+    User.find({username : req.params.username})
+    .then((user) => {
+        res.json(user)
+    })
+    .catch((err) => {
+        res.status(400).json('Error: ' + err);
+    })
+})
 
 userRoutes.route('/add').post((req, res) => {
         let user = new User(req.body)
