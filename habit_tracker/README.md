@@ -19,3 +19,4 @@ Your website should have the following technical functionality:
 - cd src/seeds
 - run node users.js
 - npm start
+- cd into the backend directory and node/nodemon server.js. This deploys the API so that the react app can query it.
