@@ -4,7 +4,7 @@ export class accountOverview extends Component {
     
     getAllActivities(){
         console.log(this.props.userInfo.username)
-    axios.get('http://localhost:4000/activities')
+    axios.get('http://localhost:4000/activities/' + this.props.userInfo.username)
     .then((res) => {
         console.log(res.data)
       this.setState({allActivities: res.data})

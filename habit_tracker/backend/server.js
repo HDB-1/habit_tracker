@@ -3,15 +3,13 @@ const app = express()
 const bodyParser = require('body-parser');
 const cors = require ('cors')
 const mongoose = require('mongoose')
-const userRoutes = express.Router();
-const activityRoutes = express.Router();
+const Router = express.Router();
 const PORT = 4000;
 
 let User = require('./models/user.model')
 let Activity = require('./models/activities.model')
 
-app.use('/users', userRoutes);
-app.use('/activities', activityRoutes)
+app.use('/', Router);
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -25,7 +23,7 @@ connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
 })
 
-userRoutes.route('/').get((req, res) => {
+Router.route('/users').get((req, res) => {
         User.find()
         .then((users) => {
             res.json(users)
@@ -36,7 +34,7 @@ userRoutes.route('/').get((req, res) => {
     })
     
 // Route for validating user details
-userRoutes.route('/:username').get((req, res) => {
+Router.route('/users/:username').get((req, res) => {
     User.find({username : req.params.username})
     .then((user) => {
         res.json(user)
@@ -46,7 +44,7 @@ userRoutes.route('/:username').get((req, res) => {
     })
 })
 
-userRoutes.route('/add').post((req, res) => {
+Router.route('/users/add').post((req, res) => {
     let user = new User(req.body)
     console.log(req.body)
     user.save()
@@ -59,7 +57,7 @@ userRoutes.route('/add').post((req, res) => {
     })
 })
 
-activityRoutes.route('/:username').get((req, res) => {
+Router.route('/activities/:username').get((req, res) => {
     Activity.find({username : req.params.username})
     .then((activities) => {
         res.json(activities)
