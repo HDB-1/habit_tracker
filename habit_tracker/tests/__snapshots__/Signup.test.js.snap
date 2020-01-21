@@ -3,7 +3,7 @@
 exports[`shallow Login should render correctly 1`] = `
 <div>
   <h3>
-    Put your login info here
+    Or if you're a first-time visitor, sign up below!
   </h3>
   <form>
     <label
@@ -26,11 +26,31 @@ exports[`shallow Login should render correctly 1`] = `
         type="text"
       />
     </label>
+    <label
+      for="firstName"
+    >
+      First Name
+      <input
+        className="firstName"
+        name="fn"
+        type="text"
+      />
+    </label>
+    <label
+      for="lastName"
+    >
+      Last Name
+      <input
+        className="lastName"
+        name="ln"
+        type="text"
+      />
+    </label>
     <button
-      id="loginButton"
+      id="signUpButton"
       type="submit"
     >
-      Log in
+      Sign up
     </button>
   </form>
 </div>
