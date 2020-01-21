@@ -17,7 +17,9 @@ export class App extends Component {
     axios.get('http://localhost:4000/users')
     .then((res) => {
       // const usersInfo = res.data;
-      this.setState({users: res.data})
+      this.setState({
+        users: res.data
+      })
     })
     .catch((err) => {
       console.log('this is the error: ' + err)
@@ -27,12 +29,25 @@ export class App extends Component {
   componentDidMount(){
     this.getAllUsers();
   }
+  
+  checkCredentials = (inputUsername, inputPassword) => {
+    console.log('running')
+    axios.get('http://localhost:4000/users/' + inputUsername)
+    .then((result) => {
+      console.log(result.data[0].password)
+      this.setState({enteredDetails: result.data})
+      if (result.data[0].password === inputPassword) {
+        this.setState({currentUser: inputUsername})
+        console.log('well done')
+      }
+    })
+  }
 
   render() {
     return (
       <Router>
         <h1>Welcome to your favorite habit tracker!</h1>
-        <Login />
+        <Login checkCredentials={this.checkCredentials}/>
         <Signup />
       <div>
         
