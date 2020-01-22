@@ -22,6 +22,9 @@ let Activities = new Schema({
     },
     streak: {
         type: Number
+    },
+    __v: {
+        type: Number
     }
 
 });
