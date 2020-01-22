@@ -84,6 +84,40 @@ Router.route('/activities/:username').get((req, res) => {
     })
 })
 
+Router.route('/activities/find-by-name/:activityName').get((req, res) => {
+    Activity.find({activityName : req.params.activityName})
+    .then((activities) => {
+        res.json(activities)
+    })
+    .catch((err) => {
+        res.status(400).json('Error: ' + err);
+    })
+})
+
+
+// var url = "mongodb://127.0.0.1:27017/";
+// MongoClient.connect(url, function(err, db) {
+//     if (err) throw err;
+//     var dbo = db.db("habit_tracker");
+//     var myquery = { activityName: "gym" };
+//     var newvalues = { $set: {isPriority: false} };
+//     dbo.collection("activities").updateOne(myquery, newvalues, function(err, res) {
+//       if (err) throw err;
+//       console.log("1 document updated");
+//       db.close();
+//     });
+//   });
+
+Router.route('/activities/update').get((req, res) => {
+    Activity.updateMany({}, { $set: {completed: true}})
+    Activity.save()
+    .then(result => {
+        res.json(result)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
 
 app.use('/', Router);
 
