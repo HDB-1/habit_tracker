@@ -1,0 +1,11 @@
+.completedTask {
+    color: green
+}
+
+.incompleteTask {
+    color: red
+}
+
+.completedTask , .incompleteTask { 
+    border: 2px solid black
+}
