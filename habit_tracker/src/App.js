@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router , Switch, Route } from 'react-router-dom'
-import Login from './components/Login'
-import Signup from './components/Signup'
-import MongoClient from 'mongodb'
+import React, { Component } from 'react';
+import { BrowserRouter as Router , Switch, Route } from 'react-router-dom';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 import axios from 'axios';
-import AccountOverview from './containers/AccountOverview'
-import { resolve } from 'dns'
-const url = 'mongodb://localhost:27017';
+import AccountOverview from './containers/AccountOverview';
+import './App.css';
+
 
 export class App extends Component {
 
@@ -58,12 +57,12 @@ export class App extends Component {
   render() {
     return (
       <Router>
-        <h1>Welcome to your favorite habit tracker!</h1>
-        {!this.state.currentUser ? <Login checkCredentials={this.checkCredentials}/> : null}
-        {!this.state.currentUser ? <Signup signup={this.signupNewUser}/>: null}
-      <div>
-        {this.state.currentUser ? <AccountOverview  userInfo = {this.state.currentUser}/> : 'not currently logged in' }
-      </div>
+        <div className='app'>
+          <h1>Welcome to your favorite habit tracker!</h1>
+          {!this.state.currentUser ? <Login checkCredentials={this.checkCredentials}/> : null}
+          {!this.state.currentUser ? <Signup signup={this.signupNewUser}/>: null}
+          {this.state.currentUser ? <AccountOverview  userInfo = {this.state.currentUser}/> : 'not currently logged in' }
+        </div>
       </Router>
     )
   }

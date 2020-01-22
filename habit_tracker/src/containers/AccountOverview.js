@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Tasks from '../components/Tasks'
-import AddActivity from '../components/AddActivity'
+import Tasks from '../components/Tasks/Tasks'
+import AddActivity from '../components/AddActivity/AddActivity'
 
 export class accountOverview extends Component {
     state = {}

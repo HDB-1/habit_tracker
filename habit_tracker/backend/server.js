@@ -119,6 +119,20 @@ Router.route('/activities/update').get((req, res) => {
     })
 })
 
+Router.route('/mark_task_as_complete').post((req, res) => {
+    console.log(req.body)
+    Activity.findOneAndUpdate({activityName: req.body.activityName}, {completed: false}, {new: true})
+    .then((activity) => {
+        activity.save();
+        res.json(activity)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
+
+
+
 app.use('/', Router);
 
 
