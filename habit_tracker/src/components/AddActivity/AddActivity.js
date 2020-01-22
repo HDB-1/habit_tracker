@@ -6,11 +6,11 @@ export class AddActivity extends Component {
         isPriority: false
     }
 
-    handleChangeOfActivityName = (event) => {
-        this.setState({activityName: event.target.value})
+    handleChangeOfActivityName = (input) => {
+        this.setState({activityName: input})
     }
-    handleChangeOfFrequency = (event) => {
-        this.setState({frequency: event.target.value})
+    handleChangeOfFrequency = (input) => {
+        this.setState({frequency: input})
     }
     
     togglePriority = () => {
@@ -27,11 +27,11 @@ export class AddActivity extends Component {
             <form>
                 <label for="activityName">Name of activity
                 <input type="text" name="activityName" 
-                onChange = {(event) => this.handleChangeOfActivityName(event)}>
+                onChange = {(event) => this.handleChangeOfActivityName(event.target.value)}>
                 </input>
                 </label>
                 <label for="frequency">Frequency
-                <select name="frequency" onChange = {(event) => this.handleChangeOfFrequency(event)}>
+                <select name="frequency" onChange = {(event) => this.handleChangeOfFrequency(event.target.value)}>
                     <option value = "Daily">Daily</option>
                     <option value = "Weekly">Weekly</option>
                     <option value = "Monthly">Monthly</option>
