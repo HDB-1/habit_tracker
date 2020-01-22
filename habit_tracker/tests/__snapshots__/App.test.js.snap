@@ -5,8 +5,14 @@ exports[`shallow app should render correctly 1`] = `
   <h1>
     Welcome to your favorite habit tracker!
   </h1>
-  <Login />
-  <Signup />
-  <div />
+  <Login
+    checkCredentials={[Function]}
+  />
+  <Signup
+    signup={[Function]}
+  />
+  <div>
+    not currently logged in
+  </div>
 </BrowserRouter>
 `;

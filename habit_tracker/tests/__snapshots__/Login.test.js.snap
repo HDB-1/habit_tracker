@@ -5,33 +5,34 @@ exports[`shallow Login should render correctly 1`] = `
   <h3>
     Put your login info here
   </h3>
-  <form>
-    <label
-      for="userName"
-    >
-      Username
-      <input
-        className="userName"
-        name="userName"
-        type="text"
-      />
-    </label>
-    <label
-      for="password"
-    >
-      Password
-      <input
-        className="password"
-        name="password"
-        type="text"
-      />
-    </label>
-    <button
-      id="loginButton"
-      type="submit"
-    >
-      Log in
-    </button>
-  </form>
+  <label
+    for="userName"
+  >
+    Username
+    <input
+      className="userName"
+      name="userName"
+      onChange={[Function]}
+      type="text"
+    />
+  </label>
+  <label
+    for="password"
+  >
+    Password
+    <input
+      className="password"
+      name="password"
+      onChange={[Function]}
+      type="text"
+    />
+  </label>
+  <button
+    id="loginButton"
+    onClick={[Function]}
+    type="button"
+  >
+    Log in
+  </button>
 </div>
 `;
