@@ -6,6 +6,35 @@
     color: red
 }
 
+
+
 .completedTask , .incompleteTask { 
-    border: 2px solid black
+    display: flex;
+    border: 3px solid black;
+    margin: 10px;
+    display: inline-block;
+    width: 50%;
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    text-align: left;
+}
+
+li {
+    list-style-type: none;
+}
+
+.activityName {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.lastCompleted {
+    font-size: 12px;
+    right: 10px;
+    bottom: 4px;
+}
+
+.tick {
+    width: 100px;
 }
