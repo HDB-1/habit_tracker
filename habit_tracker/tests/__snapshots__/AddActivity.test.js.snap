@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shallow AddActivity Should render correctly 1`] = `
+<div>
+  <form>
+    <label
+      for="activityName"
+    >
+      Name of activity
+      <input
+        name="activityName"
+        onChange={[Function]}
+        type="text"
+      />
+    </label>
+    <label
+      for="frequency"
+    >
+      Frequency
+      <select
+        name="frequency"
+        onChange={[Function]}
+      >
+        <option
+          value="Daily"
+        >
+          Daily
+        </option>
+        <option
+          value="Weekly"
+        >
+          Weekly
+        </option>
+        <option
+          value="Monthly"
+        >
+          Monthly
+        </option>
+      </select>
+    </label>
+    <label
+      for="priority"
+    >
+      Priority (probs actually a radio button)
+      <input
+        name="priority"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      This task is a priority
+    </label>
+    <button
+      id="addActivityButton"
+      onClick={[Function]}
+      type="button"
+    >
+      Add an activity! (jsx needs updating)
+    </button>
+  </form>
+</div>
+`;
