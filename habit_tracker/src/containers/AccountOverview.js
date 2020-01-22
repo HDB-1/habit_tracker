@@ -7,12 +7,9 @@ export class accountOverview extends Component {
     state = {}
 
     getAllActivities = () => {
-        console.log(this.props.userInfo.username)
     axios.get('http://localhost:4000/activities/' + this.props.userInfo.username)
     .then((res) => {
-        console.log(res.data)
       this.setState({allActivities: res.data})
-      console.log(this.state.allActivities)
     })
     .catch((err) => {
         console.log('erro in account overview' + err)
@@ -24,13 +21,11 @@ export class accountOverview extends Component {
   }
 
   addNewActivity = (newTaskInfo) => {
-    console.log(newTaskInfo)
     axios.post('http://localhost:4000/activities/add', {
       username: this.props.userInfo.username,
       activityName: newTaskInfo.activityName,
       frequency: newTaskInfo.frequency,
       completed: false,
-
       isPriority: newTaskInfo.isPriority,
       lastCompleted: '',
       streak: 0
