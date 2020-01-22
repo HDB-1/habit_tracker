@@ -23,6 +23,16 @@ export class accountOverview extends Component {
       this.setState({addingNewActivity : true})
   }
 
+  addNewActivity = (newTaskInfo) => {
+    console.log(newTaskInfo)
+    axios.post('http://localhost:4000/activities/add', {
+      activityName: newTaskInfo.activityName,
+      frequency: newTaskInfo.frequency,
+      isPriority: newTaskInfo.isPriority
+    })
+    .then(this.setState({displayAddActivityComponent: false}))
+  }
+
 componentDidMount() {
     this.getAllActivities()
 }
@@ -39,7 +49,7 @@ componentDidMount() {
                 </div>
                 }
                 {this.state.addingNewActivity ? 
-                <AddActivity /> : 
+                <AddActivity addNewActivity = {this.addNewActivity}/> : 
                 <button type="button" onClick={this.displayAddActivityComponent}>Add activity</button>}
             </div>
         )

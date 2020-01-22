@@ -8,8 +8,14 @@ export class AddActivity extends Component {
     handleChangeOfFrequency = (event) => {
         this.setState({frequency: event.target.value})
     }
-    handleChangeOfPriority = (event) => {
-        this.setState({priority: event.target.value})
+    
+    togglePriority = () => {
+        if(this.state.isPriority){
+            this.setState({isPriority : false})
+        }
+        else{
+            this.setState({isPriority: true})
+        }
     }
     
     render() {
@@ -29,9 +35,9 @@ export class AddActivity extends Component {
                     </select>
                     </label>
                     <label for="priority">Priority (probs actually a radio button)
-                    <input type="checkbox" name="priority" onChange = {(event) => this.handleChangeOfPriority(event)}/>This task is a priority
+                    <input type="checkbox" name="priority" onClick = {() => this.togglePriority()}/>This task is a priority
                     </label>
-                    <button type="button" id="addActivityButton" >Add an activity! (jsx needs updating)</button>
+                    <button type="button" id="addActivityButton" onClick={() => this.props.addNewActivity(this.state)}>Add an activity! (jsx needs updating)</button>
                 </form>
         </div>
         )
