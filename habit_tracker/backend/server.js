@@ -59,6 +59,21 @@ Router.route('/users/add').post((req, res) => {
     })
 })
 
+Router.route('/activities/add').post((req, res) => {
+    console.log(req.body)
+    let activity = new Activity(req.body)
+    
+    console.log('You are trying to add this!!!!!' + req.body)
+    activity.save()
+    .then((users) => {
+        res.status(200).json({'user' : 'activity added successfully'})
+        res.json(users)
+    })
+    .catch((err) => {
+        res.status(400).json('Error: ' + err);
+    })
+})
+
 Router.route('/activities/:username').get((req, res) => {
     Activity.find({username : req.params.username})
     .then((activities) => {

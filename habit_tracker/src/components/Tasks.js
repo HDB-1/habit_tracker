@@ -8,8 +8,6 @@ export default function Tasks(props) {
                 {props.activitiesArray.map((activity, index) => {
                     return <Task activity={activity}/>
                 })}
-
-
             </ul>
         </div>
     )

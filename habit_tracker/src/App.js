@@ -52,9 +52,6 @@ export class App extends Component {
       username: submittedDetails.username,
       password: submittedDetails.password
     })
-    .then((response) => {
-      resolve(response)
-    })
     .then(this.setState({currentUser: submittedDetails}))
   }
 
