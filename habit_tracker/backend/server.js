@@ -121,7 +121,14 @@ Router.route('/activities/update').get((req, res) => {
 
 Router.route('/mark_task_as_complete').post((req, res) => {
     // console.log(req.body)
-    Activity.findOneAndUpdate({activityName: req.body.activityName}, {completed: true}, {new: true})
+    let now = new Date()
+    let isoString = now.toISOString();
+    Activity.findOneAndUpdate(
+        {activityName: req.body.activityName},
+        {completed: true,
+            lastCompleted: isoString},
+        {new: true}
+        )
     .then((activity) => {
         activity.save();
         res.json(activity)
