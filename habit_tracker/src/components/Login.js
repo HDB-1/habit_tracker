@@ -23,7 +23,7 @@ export class Login extends Component {
                 <input type="text" className = "password" name="password" onChange={(event) => this.handleChangeOfPassword(event)}></input>
                 </label>
                 <button type="button" id="loginButton" onClick={() => this.props.checkCredentials(this.state.currenInputUsername, this.state.currenInputPassword)}>Log in</button>
-            </div
+            </div>
         )
     }
 }
