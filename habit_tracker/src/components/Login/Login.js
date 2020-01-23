@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Login.css'
+// import { FormControl } from '@material-ui/core';
 
 export class Login extends Component {
 
@@ -16,17 +17,25 @@ export class Login extends Component {
 
         return (
             <div className="login">
-                <h3>Put your login info here</h3>
-                <label for="userName">Username
-                <input type="text" className = "userName" name="userName" onChange={(event) => this.handleChangeOfUsername(event)}></input>
-                </label>
-                <label for="password">Password
-                <input type="text" className = "password" name="password" onChange={(event) => this.handleChangeOfPassword(event)}></input>
-                </label>
-                <button type="button" className="loginButton" onClick={() => this.props.checkCredentials(this.state.currenInputUsername, this.state.currenInputPassword)}>Log in</button>
+            <h3>Sign in</h3>
+            <div className="container">
+        <div className="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" onChange={(event) => this.handleChangeOfUsername(event)}></input>
+        </div>
+        <div className="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(event) => this.handleChangeOfPassword(event)}></input>
+            <small id="emailHelp" className="form-text text-muted">We'll never share your password with anyone else.</small>
+        </div>
+        </div>
+        <button type="submit" className="btn btn-primary" onClick={() => this.props.checkCredentials(this.state.currenInputUsername, this.state.currenInputPassword)}>Submit</button>
+       
             </div>
         )
+            
+        }    
+    
     }
-}
 
 export default Login

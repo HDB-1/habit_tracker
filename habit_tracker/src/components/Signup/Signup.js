@@ -20,21 +20,44 @@ export class Signup extends Component {
         return (
             <div>
                 <h3>Or if you're a first-time visitor, sign up below!</h3>
-                <form>
-                    <label for="firstName">First Name
-                    <input type="text" className = "firstName" name="fn"onChange={(event) => this.handleChangeOfFn(event)}></input>
-                    </label>
-                    <label for="lastName">Last Name
-                    <input type="text" className = "lastName" name="ln"onChange={(event) => this.handleChangeOfLn(event)}></input>
-                    </label>
-                    <label for="userName">Username
-                    <input type="text" className = "userName" name="userName" onChange={(event) => this.handleChangeOfUsername(event)}></input>
-                    </label>
-                    <label for="password">Password
-                    <input type="text" className = "password" name="password"onChange={(event) => this.handleChangeOfPassword(event)}></input>
-                    </label>
-                    <button type="button" id="signUpButton" onClick={() => this.props.signup(this.state)}>Sign up</button>
-                </form>
+                <form clasName="needs-validation" novalidate>
+  <div clasName="form-row">
+    <div clasName="col-md-4 mb-3">
+      <label for="validationCustom01">First name</label>
+      <input type="text" clasName="form-control" id="validationCustom01" placeholder="First name" value="Mark" name="fn" required></input>
+      <div clasName="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div clasName="col-md-4 mb-3">
+      <label for="validationCustom02">Last name</label>
+      <input type="text" clasName="form-control" id="validationCustom02" placeholder="Last name" name="ln" value="Otto" required></input>
+      <div clasName="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div clasName="col-md-4 mb-3">
+      <label for="validationCustomUsername">Username</label>
+      <div clasName="input-group">
+        <div clasName="input-group-prepend">
+          <span clasName="input-group-text" id="inputGroupPrepend">@</span>
+        </div>
+        <input type="text" clasName="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" name="userName" required></input>
+        <div clasName="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div clasName="form-row">
+    <div clasName="col-md-6 mb-3">
+      <label for="validationCustom03">Password</label>
+      <input type="password" clasName="form-control" id="validationCustom03" placeholder="Password" name="password" required>
+      
+  <button className="btn btn-primary" type="submit">Submit form</button>
+</form>
+
+
             </div>
         )
     }
