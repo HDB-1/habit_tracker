@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Login.css'
 
 export class Login extends Component {
 
@@ -14,7 +15,7 @@ export class Login extends Component {
 
 
         return (
-            <div>
+            <div className="login">
                 <h3>Put your login info here</h3>
                 <label for="userName">Username
                 <input type="text" className = "userName" name="userName" onChange={(event) => this.handleChangeOfUsername(event)}></input>
@@ -22,7 +23,7 @@ export class Login extends Component {
                 <label for="password">Password
                 <input type="text" className = "password" name="password" onChange={(event) => this.handleChangeOfPassword(event)}></input>
                 </label>
-                <button type="button" id="loginButton" onClick={() => this.props.checkCredentials(this.state.currenInputUsername, this.state.currenInputPassword)}>Log in</button>
+                <button type="button" className="loginButton" onClick={() => this.props.checkCredentials(this.state.currenInputUsername, this.state.currenInputPassword)}>Log in</button>
             </div>
         )
     }
