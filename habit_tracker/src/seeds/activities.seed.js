@@ -8,7 +8,7 @@ const data = [{
     completed: false,
     isPriority: false,
     lastCompleted: new Date(2019, 11, 16, 14, 34, 43, 43),
-    streak: 0
+    streak: 4
 },
 {
     username: 'jszrt',
@@ -25,8 +25,8 @@ const data = [{
     frequency: 'weekly',
     completed: true,
     isPriority: true,
-    lastCompleted: new Date(2020, 0, 18, 14, 34, 43, 43),
-    streak: 1
+    lastCompleted: new Date(2020, 0, 22, 14, 34, 43, 43),
+    streak: 1000
 },
 {
     username: 'hdeb44',
@@ -35,7 +35,7 @@ const data = [{
     completed: false,
     isPriority: false,
     lastCompleted: new Date(2020, 0, 18, 14, 34, 43, 43),
-    streak: 1
+    streak: 5
 },
 {
     username: 'dhkander',
@@ -44,7 +44,7 @@ const data = [{
     completed: true,
     isPriority: true,
     lastCompleted: new Date(2020, 0, 22, 14, 34, 43, 43),
-    streak: 1,
+    streak: 5,
 },
 {
     username: 'dhkander',
@@ -53,7 +53,7 @@ const data = [{
     completed: false,
     isPriority: true,
     lastCompleted: new Date(2020, 0, 20, 14, 34, 43, 43),
-    streak: 0
+    streak: 5
 }
 ]
 
