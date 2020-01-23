@@ -14,8 +14,12 @@ export default function Task(props) {
                 <li>Priority flagger{props.activity.isPriority ? "This task is priority" : "this is not urgent"}</li>
                 <li>Last completed (horrible date format){props.activity.lastCompleted.toString().substring(0, 21)}</li>
                 <li>Streak{props.activity.streak}</li>
-                <button type = "button" onClick= {() => axios.post('http://localhost:4000/mark_task_as_complete', {activityName: props.activity.activityName})}>Mark task as complete</button>
-
+                <button type = "button" onClick= {() => {
+                    axios.post('http://localhost:4000/mark_task_as_complete', {activityName: props.activity.activityName});
+                    axios.post('http://localhost:4000/update_activity_streak', {activityName: props.activity.activityName, newStreak: props.activity.streak + 1})}
+                }>
+                    Mark task as complete
+                    </button>
             </ul>
         </div>
     )
