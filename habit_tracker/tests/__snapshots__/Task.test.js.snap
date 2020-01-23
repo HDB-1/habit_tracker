@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Task should render correctly 1`] = `
+<div>
+  <ul>
+    <li>
+      This is the activity name 
+      placeholder
+    </li>
+    <li>
+      This is the frequency
+      placeholder
+    </li>
+    <li>
+      task outstanding
+    </li>
+    <li>
+      Priority flagger
+      This task is priority
+    </li>
+    <li>
+      Last completed (horrible date format)
+      placeholder
+    </li>
+    <li>
+      Streak
+      0
+    </li>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Mark task as complete
+    </button>
+  </ul>
+</div>
+`;

@@ -2,16 +2,18 @@
 
 exports[`shallow app should render correctly 1`] = `
 <BrowserRouter>
-  <h1>
-    Welcome to your favorite habit tracker!
-  </h1>
-  <Login
-    checkCredentials={[Function]}
-  />
-  <Signup
-    signup={[Function]}
-  />
-  <div>
+  <div
+    className="app"
+  >
+    <h1>
+      Welcome to your favorite habit tracker!
+    </h1>
+    <Login
+      checkCredentials={[Function]}
+    />
+    <Signup
+      signup={[Function]}
+    />
     not currently logged in
   </div>
 </BrowserRouter>
