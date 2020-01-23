@@ -4,18 +4,17 @@ import './Login.css'
 
 export class Login extends Component {
 
-    handleChangeOfPassword = (event) => {
-        this.setState({currenInputPassword: event.target.value})
+    handleChangeOfPassword = (input) => {
+        this.setState({currentInputPassword: input})
     }
-    handleChangeOfUsername = (event) => {
-        this.setState({currenInputUsername: event.target.value})
+    handleChangeOfUsername = (input) => {
+        this.setState({currentInputUsername: input})
     }
-
 
     render() {
 
-
         return (
+
             <div className="login">
             <h3>Sign in</h3>
             <div className="container">
@@ -31,6 +30,7 @@ export class Login extends Component {
         </div>
         <button type="submit" className="btn btn-primary" onClick={() => this.props.checkCredentials(this.state.currenInputUsername, this.state.currenInputPassword)}>Submit</button>
        
+
             </div>
         )
             

@@ -1,7 +1,8 @@
+
 .completedTask {
     color: green;
     background-color: rgb(184, 255, 177);
-}
+
 
 .incompleteTask {
     color: red;
@@ -9,6 +10,7 @@
 }
 
 .completedTask , .incompleteTask { 
+
     display: flex;
     flex-direction: row;
     border: 3px solid black;
@@ -87,3 +89,5 @@
 
 }
     
+
+

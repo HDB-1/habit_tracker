@@ -10,6 +10,7 @@ import streakFlameImage from '../../pics/streakFlame.png'
 
 export default function Task(props) {
     return (
+
         <div className={props.className}>
             <h5 className="headbar">Activity Name</h5>
             <h5 className="headbar">Streak</h5>
@@ -25,6 +26,7 @@ export default function Task(props) {
             <button className="completedBtn done" type = "button" onClick= {() => axios.post('http://localhost:4000/mark_task_as_complete', {activityName: props.activity.activityName})}>Mark task as complete</button>
             <p className="lastCompleted done">Last completed: {props.activity.lastCompleted.toString().substring(0, 10)}  @  {props.activity.lastCompleted.toString().substring(11, 16)}</p>
             </div>
+
         </div>
     )
 }

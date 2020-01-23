@@ -6,11 +6,11 @@ export class AddActivity extends Component {
         isPriority: false
     }
 
-    handleChangeOfActivityName = (event) => {
-        this.setState({activityName: event.target.value})
+    handleChangeOfActivityName = (input) => {
+        this.setState({activityName: input})
     }
-    handleChangeOfFrequency = (event) => {
-        this.setState({frequency: event.target.value})
+    handleChangeOfFrequency = (input) => {
+        this.setState({frequency: input})
     }
     
     togglePriority = () => {
@@ -25,6 +25,7 @@ export class AddActivity extends Component {
         return (
             <div>
             <form>
+
   <div class="form-group">
     <label for="exampleFormControlTextarea1">What do you need to do?</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"  onChange = {(event) => this.handleChangeOfActivityName(event)}></textarea>
@@ -45,6 +46,7 @@ export class AddActivity extends Component {
   <button type="button" class="btn btn-primary" id="addActivityButton" onClick={() => this.props.addNewActivity(this.state)}>Add</button>
 
 </form>
+
         </div>
         )
     }

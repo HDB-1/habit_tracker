@@ -7,8 +7,8 @@ const data = [{
     frequency: 'monthly',
     completed: false,
     isPriority: false,
-    lastCompleted: '2019-12-16T14:34:43.432Z', //date bit might need touching up
-    streak: 0
+    lastCompleted: new Date(2019, 11, 16, 14, 34, 43, 43),
+    streak: 4
 },
 {
     username: 'jszrt',
@@ -16,7 +16,7 @@ const data = [{
     frequency: 'daily',
     completed: false,
     isPriority: true,
-    lastCompleted: '2020-01-20T14:34:43.432Z', //date bit might need touching up
+    lastCompleted: new Date(2020, 0, 20, 14, 34, 43, 43),
     streak: 2
 },
 {
@@ -25,8 +25,8 @@ const data = [{
     frequency: 'weekly',
     completed: true,
     isPriority: true,
-    lastCompleted: '2020-01-18T11:34:43.432Z', //date bit might need touching up
-    streak: 1
+    lastCompleted: new Date(2020, 0, 22, 14, 34, 43, 43),
+    streak: 1000
 },
 {
     username: 'hdeb44',
@@ -34,8 +34,8 @@ const data = [{
     frequency: 'daily',
     completed: false,
     isPriority: false,
-    lastCompleted: '2020-01-20T14:34:43.432Z', //date bit might need touching up
-    streak: 1
+    lastCompleted: new Date(2020, 0, 18, 14, 34, 43, 43),
+    streak: 5
 },
 {
     username: 'dhkander',
@@ -43,8 +43,8 @@ const data = [{
     frequency: 'daily',
     completed: true,
     isPriority: true,
-    lastCompleted: '2020-01-21T13:43:43.432Z', //date bit might need touching up
-    streak: 20
+    lastCompleted: new Date(2020, 0, 22, 14, 34, 43, 43),
+    streak: 5,
 },
 {
     username: 'dhkander',
@@ -52,8 +52,8 @@ const data = [{
     frequency: 'weekly',
     completed: false,
     isPriority: true,
-    lastCompleted: '2020-01-13T13:43:43.432Z', //date bit might need touching up
-    streak: 0
+    lastCompleted: new Date(2020, 0, 20, 14, 34, 43, 43),
+    streak: 5
 }
 ]
 

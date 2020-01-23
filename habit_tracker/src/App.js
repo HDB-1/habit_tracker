@@ -44,7 +44,6 @@ export class App extends Component {
   }
 
   signupNewUser = (submittedDetails) => {
-    console.log(submittedDetails)
     axios.post('http://localhost:4000/users/add', {
       fn: submittedDetails.fn,
       ln: submittedDetails.ln,

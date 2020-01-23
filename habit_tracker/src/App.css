@@ -1,5 +1,6 @@
-.app {
+ .app {
   text-align: center;
+
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -8,3 +9,4 @@
 h1{
   font-family: 'Bangers', cursive;
 }
+
