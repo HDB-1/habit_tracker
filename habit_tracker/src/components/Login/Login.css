@@ -1,0 +1,122 @@
+/* .login {
+    display: flex;
+justify-content:center;
+align-items: center;} */
+
+/* .loginButton {
+    outline: none;
+    height: 50px;
+    width: 100px;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 5px;
+    padding: 1.2em 1.2em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-color: rgb(0, 255, 64);
+    color: #fff;
+    box-shadow: 0 0 40px 40px rgb(39, 182, 26) inset, 0 0 0 0 rgb(20, 214, 69);
+    transition: all 150ms ease-in-out; */
+/* }
+  .loginButton:hover {
+    box-shadow: 0 0 10px 0 rgb(47, 201, 33) inset, 0 0 10px 4px rgb(30, 189, 91);
+    color: green;
+}
+ */
+ body {
+     width: 100%;
+     height: 100%;
+     /* overflow: hidden; */
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     font-family: 'Open Sans Condensed', sans-serif;
+   }
+.col-md-2 {
+display: flex;
+text-align: center;
+justify-items: space-between;
+align-items: center;
+flex-wrap: wrap;
+padding-top: 30px;
+margin-left: 300px;
+}
+h3 {
+    display: flex; 
+    justify-items: right;
+    text-align: center;
+    padding-top: 80px;
+    margin-left:795px;
+    font-family: 'Bangers', cursive;
+}
+  div[class*=box] {
+    height: 33.33%;
+    width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-3 { 
+    background-color: #66A182; 
+    padding: 10px 10px;
+    margin-left:700px;
+    margin-right:700px;
+
+}
+.btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+}
+.btn-three {
+    color:gray;
+    transition: all 0.5s;
+    position: relative;
+}
+.btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+.btn-three:hover::before {
+    opacity: 2 ;
+    transform: scale(0.5,0.5);
+}
+.btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 4px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+}
+.btn-three:hover::after {
+    opacity: 4;
+    transform: scale(1,1);
+}
+

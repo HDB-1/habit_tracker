@@ -1,0 +1,18 @@
+.btn{
+    margin-top:40px;
+    font-family: 'Bowlby One SC', cursive;
+}
+.col-md-4, .mb-3{
+    margin-top:500px;
+}
+h4{
+    margin-left:20px;
+    margin-top:40px;
+    font-family:'Bangers', cursive;
+}
+body{
+    background-color: greenyellow;
+}
+/* .signup{
+    margin-top:80px;
+} */

@@ -1,26 +1,34 @@
 import React from 'react'
 import axios from 'axios'
 import './Task.css'
+import tickImage from '../../pics/tick.png'
+import crossImage from '../../pics/cross.png'
+import exclamationMarkImage from '../../pics/urgent.png'
+import streakFlameImage from '../../pics/streakFlame.png'
 
 
 
 export default function Task(props) {
     return (
-        <div>
-            <ul className={props.className}>
-                <li>This is the activity name {props.activity.activityName}</li>
-                <li>This is the frequency{props.activity.frequency}</li>
-                <li>{props.activity.completed ? "Task is complete" : "task outstanding"}</li>
-                <li>Priority flagger{props.activity.isPriority ? "This task is priority" : "this is not urgent"}</li>
-                <li>Last completed (horrible date format){props.activity.lastCompleted.toString().substring(0, 21)}</li>
-                <li>Streak{props.activity.streak}</li>
-                <button type = "button" onClick= {() => {
-                    axios.post('http://localhost:4000/mark_task_as_complete', {activityName: props.activity.activityName});
-                    axios.post('http://localhost:4000/update_activity_streak', {activityName: props.activity.activityName, newStreak: props.activity.streak + 1})}
-                }>
-                    Mark task as complete
-                    </button>
-            </ul>
+
+        <div className={props.className}>
+            <h5 className="headbar">Activity Name</h5>
+            <h5 className="headbar">Streak</h5>
+            <h5 className="headbar">Priority?</h5>
+            <h5 className="headbar">Done?</h5>
+
+            <p className="activityName coloumns">{props.activity.activityName}</p>
+            <p className="columns">This is the frequency: {props.activity.frequency}</p>
+            <p className="columns streak"><img src={streakFlameImage} className="tick" alt="flame"></img>{props.activity.streak}</p>
+            <p className="columns">{props.activity.isPriority ? <img src={exclamationMarkImage} className="tick" alt="big red exclamation mark"></img> : null}</p>
+            <div className="columns">
+            <p className="done">{props.activity.completed ? <img src={tickImage} className="tick" alt="tick"></img> : <img src={crossImage} className="tick" alt="tick"></img>}</p>
+            <button className="completedBtn done" type = "button" onClick= {() => axios.post('http://localhost:4000/mark_task_as_complete', {activityName: props.activity.activityName})}>Mark task as complete</button>
+            <p className="lastCompleted done">Last completed: {props.activity.lastCompleted.toString().substring(0, 10)}  @  {props.activity.lastCompleted.toString().substring(11, 16)}</p>
+            </div>
+
         </div>
     )
 }
+
+
