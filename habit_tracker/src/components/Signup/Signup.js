@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 
 export class Signup extends Component {
 
-    handleChangeOfUsername = (event) => {
-        this.setState({username: event.target.value})
+    handleChangeOfUsername = (input) => {
+        this.setState({username: input})
     }
-    handleChangeOfPassword = (event) => {
-        this.setState({password: event.target.value})
+    handleChangeOfPassword = (input) => {
+        this.setState({password: input})
     }
-    handleChangeOfFn = (event) => {
-        this.setState({fn: event.target.value})
+    handleChangeOfFn = (input) => {
+        this.setState({fn: input})
     }
-    handleChangeOfLn = (event) => {
-        this.setState({ln: event.target.value})
+    handleChangeOfLn = (input) => {
+        this.setState({ln: input})
     }
     
 
