@@ -6,11 +6,11 @@ export class AddActivity extends Component {
         isPriority: false
     }
 
-    handleChangeOfActivityName = (event) => {
-        this.setState({activityName: event.target.value})
+    handleChangeOfActivityName = (input) => {
+        this.setState({activityName: input})
     }
-    handleChangeOfFrequency = (event) => {
-        this.setState({frequency: event.target.value})
+    handleChangeOfFrequency = (input) => {
+        this.setState({frequency: input})
     }
     
     togglePriority = () => {
@@ -23,25 +23,30 @@ export class AddActivity extends Component {
     
     render() {
         return (
-            <div>
+            <div className="container">
             <form>
-                <label for="activityName">Name of activity
-                <input type="text" name="activityName" 
-                onChange = {(event) => this.handleChangeOfActivityName(event)}>
-                </input>
-                </label>
-                <label for="frequency">Frequency
-                <select name="frequency" onChange = {(event) => this.handleChangeOfFrequency(event)}>
-                    <option value = "Daily">Daily</option>
-                    <option value = "Weekly">Weekly</option>
-                    <option value = "Monthly">Monthly</option>
-                </select>
-                </label>
-                <label for="priority">Priority (probs actually a radio button)
-                <input type="checkbox" name="priority" onClick = {() => this.togglePriority()}/>This task is a priority
-                </label>
-                <button type="button" id="addActivityButton" onClick={() => this.props.addNewActivity(this.state)}>Add an activity! (jsx needs updating)</button>
-            </form>
+
+  <div className="form-group">
+    <label for="exampleFormControlTextarea1">What do you need to do?</label>
+    <textarea name="activityName" className="form-control" id="exampleFormControlTextarea1" rows="2"  onChange = {(event) => this.handleChangeOfActivityName(event.target.value)}></textarea>
+  </div>
+
+  <div className="form-group">
+    <label for="exampleFormControlSelect1">Frequency</label>
+    <select name="frequency" className="form-control" id="exampleFormControlSelect1" onChange = {(event) => this.handleChangeOfFrequency(event.target.value)}>
+    <option value = "Daily">Daily</option>
+    <option value = "Weekly">Weekly</option>
+    <option value = "Monthly">Monthly</option>
+    </select>
+  </div>
+  <div className="form-group form-check">
+    <input type="checkbox" className="form-check-input" id="exampleCheck1" name="priority" onClick = {() => this.togglePriority()}></input>
+    <label className="form-check-label" for="exampleCheck1">Is this habit important?</label>
+  </div>
+  <button type="button" className="btn btn-primary" id="addActivityButton" onClick={() => this.props.addNewActivity(this.state)}>Add</button>
+
+</form>
+
         </div>
         )
     }

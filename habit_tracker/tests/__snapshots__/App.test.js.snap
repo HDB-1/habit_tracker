@@ -1,18 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shallow app should render correctly 1`] = `
-<BrowserRouter>
-  <h1>
-    Welcome to your favorite habit tracker!
-  </h1>
-  <Login
-    checkCredentials={[Function]}
-  />
-  <Signup
-    signup={[Function]}
-  />
-  <div>
+<Component>
+  <div
+    className="app"
+  >
+    <h1>
+      Welcome to your favorite habit tracker!
+    </h1>
+    <Login
+      checkCredentials={[Function]}
+    />
+    <Signup
+      signup={[Function]}
+    />
     not currently logged in
   </div>
-</BrowserRouter>
+</Component>
 `;

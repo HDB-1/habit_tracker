@@ -1,31 +1,41 @@
 import React, { Component } from 'react'
+import './Login.css'
+// import { FormControl } from '@material-ui/core';
 
 export class Login extends Component {
 
-    handleChangeOfPassword = (event) => {
-        this.setState({currenInputPassword: event.target.value})
+    handleChangeOfPassword = (input) => {
+        this.setState({currentInputPassword: input})
     }
-    handleChangeOfUsername = (event) => {
-        this.setState({currenInputUsername: event.target.value})
+    handleChangeOfUsername = (input) => {
+        this.setState({currentInputUsername: input})
     }
-
 
     render() {
 
-
         return (
-            <div>
-                <h3>Put your login info here</h3>
-                <label for="userName">Username
-                <input type="text" className = "userName" name="userName" onChange={(event) => this.handleChangeOfUsername(event)}></input>
-                </label>
-                <label for="password">Password
-                <input type="text" className = "password" name="password" onChange={(event) => this.handleChangeOfPassword(event)}></input>
-                </label>
-                <button type="button" id="loginButton" onClick={() => this.props.checkCredentials(this.state.currenInputUsername, this.state.currenInputPassword)}>Log in</button>
+
+            <div className="login">
+            <h3>Sign in</h3>
+            <div className="container">
+        <div className="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" name="userName" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" onChange={(event) => this.handleChangeOfUsername(event.target.value)}></input>
+        </div>
+        <div className="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(event) => this.handleChangeOfPassword(event.target.value)}></input>
+            <small id="emailHelp" className="form-text text-muted">We'll never share your password with anyone else.</small>
+        </div>
+        </div>
+        <button type="submit" className="btn btn-primary" onClick={() => this.props.checkCredentials(this.state.currentInputUsername, this.state.currentInputPassword)}>Submit</button>
+       
+
             </div>
         )
+            
+        }    
+    
     }
-}
 
 export default Login

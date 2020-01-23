@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Tasks should render correctly 1`] = `
+<div>
+  <ul>
+    <Task
+      activity={
+        Object {
+          "activityName": "placeholder",
+          "completed": false,
+          "frequency": "placeholder",
+          "isPriority": true,
+          "lastCompleted": "placeholder",
+          "streak": 0,
+          "username": "placeholder",
+        }
+      }
+      className="incompleteTask"
+    />
+  </ul>
+</div>
+`;

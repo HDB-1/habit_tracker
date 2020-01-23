@@ -1,23 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Shallow AddActivity Should render correctly 1`] = `
-<div>
+<div
+  className="container"
+>
   <form>
-    <label
-      for="activityName"
+    <div
+      className="form-group"
     >
-      Name of activity
-      <input
+      <label
+        for="exampleFormControlTextarea1"
+      >
+        What do you need to do?
+      </label>
+      <textarea
+        className="form-control"
+        id="exampleFormControlTextarea1"
         name="activityName"
         onChange={[Function]}
-        type="text"
+        rows="2"
       />
-    </label>
-    <label
-      for="frequency"
+    </div>
+    <div
+      className="form-group"
     >
-      Frequency
+      <label
+        for="exampleFormControlSelect1"
+      >
+        Frequency
+      </label>
       <select
+        className="form-control"
+        id="exampleFormControlSelect1"
         name="frequency"
         onChange={[Function]}
       >
@@ -37,24 +51,31 @@ exports[`Shallow AddActivity Should render correctly 1`] = `
           Monthly
         </option>
       </select>
-    </label>
-    <label
-      for="priority"
+    </div>
+    <div
+      className="form-group form-check"
     >
-      Priority (probs actually a radio button)
       <input
+        className="form-check-input"
+        id="exampleCheck1"
         name="priority"
         onClick={[Function]}
         type="checkbox"
       />
-      This task is a priority
-    </label>
+      <label
+        className="form-check-label"
+        for="exampleCheck1"
+      >
+        Is this habit important?
+      </label>
+    </div>
     <button
+      className="btn btn-primary"
       id="addActivityButton"
       onClick={[Function]}
       type="button"
     >
-      Add an activity! (jsx needs updating)
+      Add
     </button>
   </form>
 </div>

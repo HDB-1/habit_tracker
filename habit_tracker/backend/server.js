@@ -45,10 +45,7 @@ Router.route('/users/:username').get((req, res) => {
 })
 
 Router.route('/users/add').post((req, res) => {
-    console.log(req.body)
     let user = new User(req.body)
-    
-    console.log('You are trying to add this!!!!!' + req.body)
     user.save()
     .then((users) => {
         res.status(200).json({'user' : 'user added successfully'})
@@ -60,10 +57,7 @@ Router.route('/users/add').post((req, res) => {
 })
 
 Router.route('/activities/add').post((req, res) => {
-    // console.log(req.body)
     let activity = new Activity(req.body)
-    
-    console.log('You are trying to add this!!!!!' + req.body)
     activity.save()
     .then((users) => {
         res.status(200).json({'user' : 'activity added successfully'})
@@ -94,20 +88,6 @@ Router.route('/activities/find-by-name/:activityName').get((req, res) => {
     })
 })
 
-
-// var url = "mongodb://127.0.0.1:27017/";
-// MongoClient.connect(url, function(err, db) {
-//     if (err) throw err;
-//     var dbo = db.db("habit_tracker");
-//     var myquery = { activityName: "gym" };
-//     var newvalues = { $set: {isPriority: false} };
-//     dbo.collection("activities").updateOne(myquery, newvalues, function(err, res) {
-//       if (err) throw err;
-//       console.log("1 document updated");
-//       db.close();
-//     });
-//   });
-
 Router.route('/activities/update').get((req, res) => {
     Activity.updateMany({}, { $set: {completed: true}})
     Activity.save()
@@ -120,12 +100,26 @@ Router.route('/activities/update').get((req, res) => {
 })
 
 Router.route('/mark_task_as_complete').post((req, res) => {
-    // console.log(req.body)
     let now = new Date()
     Activity.findOneAndUpdate(
         {activityName: req.body.activityName},
         {completed: true,
             lastCompleted: now},
+        {new: true}
+        )
+    .then((activity) => {
+        activity.save();
+        res.json(activity)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
+// payload for this route will be formatted {activityName (for finding the right task), newStreak(either 0 if resetting, or currentStreak+1 for updating)}
+Router.route('/update_activity_streak').post((req, res) => {
+    Activity.findOneAndUpdate(
+        {activityName: req.body.activityName},
+        {streak: req.body.newStreak},
         {new: true}
         )
     .then((activity) => {

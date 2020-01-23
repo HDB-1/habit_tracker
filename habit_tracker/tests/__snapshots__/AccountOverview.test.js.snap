@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow AccountOverview should render correctly 1`] = `
+<accountOverview
+  userInfo={
+    Object {
+      "fn": "text",
+      "ln": "text",
+    }
+  }
+/>
+`;

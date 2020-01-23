@@ -27,6 +27,10 @@ export class App extends Component {
     })
   }
 
+  logOutUser = () => {
+    this.setState({currentUser: false})
+  }
+
   
 
   componentDidMount(){
@@ -34,8 +38,11 @@ export class App extends Component {
   }
   
   checkCredentials = (inputUsername, inputPassword) => {
+    console.log(inputUsername)
+    console.log(inputPassword)
     axios.get('http://localhost:4000/users/' + inputUsername)
     .then((result) => {
+      console.log(result.data)
       this.setState({enteredDetails: result.data})
       if (result.data[0].password === inputPassword) {
         this.setState({currentUser: result.data[0]})
@@ -44,7 +51,6 @@ export class App extends Component {
   }
 
   signupNewUser = (submittedDetails) => {
-    console.log(submittedDetails)
     axios.post('http://localhost:4000/users/add', {
       fn: submittedDetails.fn,
       ln: submittedDetails.ln,
@@ -61,7 +67,7 @@ export class App extends Component {
           <h1>Welcome to your favorite habit tracker!</h1>
           {!this.state.currentUser ? <Login checkCredentials={this.checkCredentials}/> : null}
           {!this.state.currentUser ? <Signup signup={this.signupNewUser}/>: null}
-          {this.state.currentUser ? <AccountOverview  userInfo = {this.state.currentUser}/> : 'not currently logged in' }
+          {this.state.currentUser ? <AccountOverview logOutUser={this.logOutUser} userInfo = {this.state.currentUser}/> : 'not currently logged in' }
         </div>
       </Router>
     )
