@@ -2,61 +2,88 @@
 
 exports[`shallow Login should render correctly 1`] = `
 <div>
-  <h3>
-    Or if you're a first-time visitor, sign up below!
-  </h3>
-  <form>
-    <label
-      for="firstName"
+  <h4>
+    If you're a first-time visitor, sign up below!
+  </h4>
+  <div
+    className="signup"
+  >
+    <form
+      clasName="needs-validation"
+      novalidate={true}
     >
-      First Name
-      <input
-        className="firstName"
-        name="fn"
-        onChange={[Function]}
-        type="text"
-      />
-    </label>
-    <label
-      for="lastName"
-    >
-      Last Name
-      <input
-        className="lastName"
-        name="ln"
-        onChange={[Function]}
-        type="text"
-      />
-    </label>
-    <label
-      for="userName"
-    >
-      Username
-      <input
-        className="userName"
-        name="userName"
-        onChange={[Function]}
-        type="text"
-      />
-    </label>
-    <label
-      for="password"
-    >
-      Password
-      <input
-        className="password"
-        name="password"
-        onChange={[Function]}
-        type="text"
-      />
-    </label>
-    <button
-      id="signUpButton"
-      onClick={[Function]}
-      type="button"
-    >
-      Sign up
-    </button>
-  </form>
+      <div
+        clasName="form-row"
+      >
+        <div
+          clasName="col-md-4 mb-3"
+        >
+          <input
+            clasName="form-control"
+            id="validationCustom01"
+            name="fn"
+            onChange={[Function]}
+            placeholder="First name"
+            required={true}
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        clasName="col-md-4 mb-3"
+      >
+        <input
+          clasName="form-control"
+          id="validationCustom02"
+          name="ln"
+          onChange={[Function]}
+          placeholder="Last name"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        clasName="col-md-4 mb-3"
+      >
+        <input
+          clasName="form-control"
+          id="validationCustom02"
+          name="userName"
+          onChange={[Function]}
+          placeholder="Username"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        clasName="col-md-4 mb-3"
+      >
+        <input
+          clasName="form-control"
+          id="validationCustom03"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        clasName="form-row"
+      >
+        <div
+          clasName="col-md-6 mb-3"
+        >
+          <button
+            className="btn btn-primary"
+            onClick={[Function]}
+            type="submit"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 `;

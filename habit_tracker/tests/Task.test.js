@@ -10,13 +10,20 @@ describe("shallow Task", () => {
         frequency: 'placeholder',
         completed: false,
         isPriority: true,
-        lastCompleted: 'placeholder',
+        lastCompleted: new Date(2020, 0, 22, 16, 23),
         streak: 0
-      }
+    }
 
     beforeEach(() => (wrapper = shallow(<Task activity={activity}/>)))
     it("should render correctly", () => {
         expect(wrapper).toMatchSnapshot();
+    })
+    it("completedBtn done should call markTaskAs... function when clicked", () => {
+        let spy = jest.spyOn(wrapper.instance(), "markTaskAsCompleteAndUpdateStreak");
+        wrapper.instance().forceUpdate();
+        expect(spy).toHaveBeenCalledTimes(0);
+        wrapper.find('button').simulate("click");
+        expect(spy).toHaveBeenCalledTimes(1)
     })
     
 })

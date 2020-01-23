@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shallow app should render correctly 1`] = `
-<BrowserRouter>
+<Component>
   <div
     className="app"
   >
@@ -16,5 +16,5 @@ exports[`shallow app should render correctly 1`] = `
     />
     not currently logged in
   </div>
-</BrowserRouter>
+</Component>
 `;

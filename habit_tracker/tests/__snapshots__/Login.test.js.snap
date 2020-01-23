@@ -1,38 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shallow Login should render correctly 1`] = `
-<div>
+<div
+  className="login"
+>
   <h3>
-    Put your login info here
+    Sign in
   </h3>
-  <label
-    for="userName"
+  <div
+    className="container"
   >
-    Username
-    <input
-      className="userName"
-      name="userName"
-      onChange={[Function]}
-      type="text"
-    />
-  </label>
-  <label
-    for="password"
-  >
-    Password
-    <input
-      className="password"
-      name="password"
-      onChange={[Function]}
-      type="text"
-    />
-  </label>
+    <div
+      className="form-group"
+    >
+      <label
+        for="exampleInputEmail1"
+      >
+        Username
+      </label>
+      <input
+        aria-describedby="emailHelp"
+        className="form-control"
+        id="exampleInputEmail1"
+        name="userName"
+        onChange={[Function]}
+        placeholder="Username"
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        for="exampleInputPassword1"
+      >
+        Password
+      </label>
+      <input
+        className="form-control"
+        id="exampleInputPassword1"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+      />
+      <small
+        className="form-text text-muted"
+        id="emailHelp"
+      >
+        We'll never share your password with anyone else.
+      </small>
+    </div>
+  </div>
   <button
-    id="loginButton"
+    className="btn btn-primary"
     onClick={[Function]}
-    type="button"
+    type="submit"
   >
-    Log in
+    Submit
   </button>
 </div>
 `;

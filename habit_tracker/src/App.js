@@ -27,6 +27,10 @@ export class App extends Component {
     })
   }
 
+  logOutUser = () => {
+    this.setState({currentUser: false})
+  }
+
   
 
   componentDidMount(){
@@ -63,7 +67,7 @@ export class App extends Component {
           <h1>Welcome to your favorite habit tracker!</h1>
           {!this.state.currentUser ? <Login checkCredentials={this.checkCredentials}/> : null}
           {!this.state.currentUser ? <Signup signup={this.signupNewUser}/>: null}
-          {this.state.currentUser ? <AccountOverview  userInfo = {this.state.currentUser}/> : 'not currently logged in' }
+          {this.state.currentUser ? <AccountOverview logOutUser={this.logOutUser} userInfo = {this.state.currentUser}/> : 'not currently logged in' }
         </div>
       </Router>
     )

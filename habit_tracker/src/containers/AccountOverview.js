@@ -77,6 +77,8 @@ export class accountOverview extends Component {
       }
   }
 
+
+
     componentDidUpdate = () => {
         this.updateAllActivities();
     }
@@ -88,6 +90,7 @@ export class accountOverview extends Component {
     render() {
         return (
             <div>
+                <button type="button" name="logOutButton" onClick={this.props.logOutUser}>Log out</button>
                 {this.state.displayAddActivityComponent ? null : 
                 <div>
                 <h1>Welcome {this.props.userInfo.fn} {this.props.userInfo.ln}</h1>

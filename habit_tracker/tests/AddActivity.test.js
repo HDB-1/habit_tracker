@@ -13,8 +13,9 @@ describe("Shallow AddActivity", () => {
     it("Should render correctly", () => {
         expect(wrapper).toMatchSnapshot();
     });
-    it("Should render 2 input elements", () => {
-        expect(wrapper.find("input").length).toEqual(2);
+    it("Should render 1 input element and 1 textarea", () => {
+        expect(wrapper.find("input").length).toEqual(1);
+        expect(wrapper.find("textarea").length).toEqual(1);
     })
     it("Should render a select element and a submit button", () => {
         expect(wrapper.find("select").length).toEqual(1);

@@ -2,36 +2,84 @@
 
 exports[`shallow Task should render correctly 1`] = `
 <div>
-  <ul>
-    <li>
-      This is the activity name 
-      placeholder
-    </li>
-    <li>
-      This is the frequency
-      placeholder
-    </li>
-    <li>
-      task outstanding
-    </li>
-    <li>
-      Priority flagger
-      This task is priority
-    </li>
-    <li>
-      Last completed (horrible date format)
-      placeholder
-    </li>
-    <li>
-      Streak
-      0
-    </li>
+  <h5
+    className="headbar"
+  >
+    Activity Name
+  </h5>
+  <h5
+    className="headbar"
+  >
+    Streak
+  </h5>
+  <h5
+    className="headbar"
+  >
+    Priority?
+  </h5>
+  <h5
+    className="headbar"
+  >
+    Done?
+  </h5>
+  <p
+    className="activityName coloumns"
+  >
+    placeholder
+  </p>
+  <p
+    className="columns"
+  >
+    This is the frequency: 
+    placeholder
+  </p>
+  <p
+    className="columns streak"
+  >
+    <img
+      alt="flame"
+      className="tick"
+      src={Object {}}
+    />
+    0
+  </p>
+  <p
+    className="columns"
+  >
+    <img
+      alt="big red exclamation mark"
+      className="tick"
+      src={Object {}}
+    />
+  </p>
+  <div
+    className="columns"
+  >
+    <p
+      className="done"
+    >
+      <img
+        alt="tick"
+        className="tick"
+        src={Object {}}
+      />
+    </p>
     <button
+      className="completedBtn done"
       onClick={[Function]}
       type="button"
     >
       Mark task as complete
     </button>
-  </ul>
+    <p
+      className="lastCompleted done"
+      name="submitBtn"
+    >
+      Last completed: 
+      Wed Jan 22
+        @  
+      16:23
+    </p>
+  </div>
 </div>
 `;

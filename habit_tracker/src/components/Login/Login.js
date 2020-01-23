@@ -20,11 +20,11 @@ export class Login extends Component {
             <div className="container">
         <div className="form-group">
             <label for="exampleInputEmail1">Username</label>
-            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" onChange={(event) => this.handleChangeOfUsername(event.target.value)}></input>
+            <input type="text" name="userName" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" onChange={(event) => this.handleChangeOfUsername(event.target.value)}></input>
         </div>
         <div className="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(event) => this.handleChangeOfPassword(event.target.value)}></input>
+            <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(event) => this.handleChangeOfPassword(event.target.value)}></input>
             <small id="emailHelp" className="form-text text-muted">We'll never share your password with anyone else.</small>
         </div>
         </div>

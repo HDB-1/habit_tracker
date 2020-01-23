@@ -23,27 +23,27 @@ export class AddActivity extends Component {
     
     render() {
         return (
-            <div>
+            <div className="container">
             <form>
 
-  <div class="form-group">
+  <div className="form-group">
     <label for="exampleFormControlTextarea1">What do you need to do?</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"  onChange = {(event) => this.handleChangeOfActivityName(event)}></textarea>
+    <textarea name="activityName" className="form-control" id="exampleFormControlTextarea1" rows="2"  onChange = {(event) => this.handleChangeOfActivityName(event.target.value)}></textarea>
   </div>
 
-  <div class="form-group">
+  <div className="form-group">
     <label for="exampleFormControlSelect1">Frequency</label>
-    <select class="form-control" id="exampleFormControlSelect1" onChange = {(event) => this.handleChangeOfFrequency(event)}>
+    <select name="frequency" className="form-control" id="exampleFormControlSelect1" onChange = {(event) => this.handleChangeOfFrequency(event.target.value)}>
     <option value = "Daily">Daily</option>
     <option value = "Weekly">Weekly</option>
     <option value = "Monthly">Monthly</option>
     </select>
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="priority" onClick = {() => this.togglePriority()}></input>
-    <label class="form-check-label" for="exampleCheck1">Is this habit important?</label>
+  <div className="form-group form-check">
+    <input type="checkbox" className="form-check-input" id="exampleCheck1" name="priority" onClick = {() => this.togglePriority()}></input>
+    <label className="form-check-label" for="exampleCheck1">Is this habit important?</label>
   </div>
-  <button type="button" class="btn btn-primary" id="addActivityButton" onClick={() => this.props.addNewActivity(this.state)}>Add</button>
+  <button type="button" className="btn btn-primary" id="addActivityButton" onClick={() => this.props.addNewActivity(this.state)}>Add</button>
 
 </form>
 
