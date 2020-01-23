@@ -23,8 +23,14 @@ export default function Task(props) {
             <p className="columns">{props.activity.isPriority ? <img src={exclamationMarkImage} className="tick" alt="big red exclamation mark"></img> : null}</p>
             <div className="columns">
             <p className="done">{props.activity.completed ? <img src={tickImage} className="tick" alt="tick"></img> : <img src={crossImage} className="tick" alt="tick"></img>}</p>
-            <button className="completedBtn done" type = "button" onClick= {() => axios.post('http://localhost:4000/mark_task_as_complete', {activityName: props.activity.activityName})}>Mark task as complete</button>
-            <p className="lastCompleted done">Last completed: {props.activity.lastCompleted.toString().substring(0, 10)}  @  {props.activity.lastCompleted.toString().substring(11, 16)}</p>
+            <button className="completedBtn done" type = "button" onClick= {() => 
+                {axios.post('http://localhost:4000/mark_task_as_complete', {activityName: props.activity.activityName});
+                axios.post('http://localhost:4000/update_activity_streak', {
+                  activityName: props.activity.activityName,
+                  newStreak: props.activity.streak + 1
+              })}
+                }>Mark task as complete</button>
+            <p className="lastCompleted done">Last completed: {props.activity.lastCompleted.toString().substring(0,10)}  @  {props.activity.lastCompleted.toString().substring(16, 21)}</p>
             </div>
 
         </div>

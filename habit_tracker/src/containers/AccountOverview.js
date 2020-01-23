@@ -40,7 +40,7 @@ export class accountOverview extends Component {
       frequency: newTaskInfo.frequency,
       completed: false,
       isPriority: newTaskInfo.isPriority,
-      lastCompleted: '',
+      lastCompleted: new Date(),
       streak: 0
     })
     .then(this.setState({displayAddActivityComponent: false}))
