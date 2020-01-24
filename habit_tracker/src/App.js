@@ -38,15 +38,21 @@ export class App extends Component {
   }
   
   checkCredentials = (inputUsername, inputPassword) => {
-    console.log(inputUsername)
-    console.log(inputPassword)
     axios.get('http://localhost:4000/users/' + inputUsername)
     .then((result) => {
-      console.log(result.data)
+      if(!result.data[0]){
+        this.setState({incorrectLoginProvided: true})
+      }
+      else{
       this.setState({enteredDetails: result.data})
       if (result.data[0].password === inputPassword) {
-        this.setState({currentUser: result.data[0]})
+        this.setState({currentUser: result.data[0], incorrectLoginProvided: false})
+        
       }
+      else{
+        this.setState({incorrectLoginProvided: true})
+      }
+    }
     })
   }
 
@@ -65,9 +71,12 @@ export class App extends Component {
       <Router>
         <div className='app'>
           <h1>Welcome to your favorite habit tracker!</h1>
+          {!this.state.currentUser && this.state.incorrectLoginProvided ? (
+            <h3 className="wrongLoginBanner">Wrong login details provided! Please try again.</h3>
+          ) : null}
           {!this.state.currentUser ? <Login checkCredentials={this.checkCredentials}/> : null}
           {!this.state.currentUser ? <Signup signup={this.signupNewUser}/>: null}
-          {this.state.currentUser ? <AccountOverview logOutUser={this.logOutUser} userInfo = {this.state.currentUser}/> : 'not currently logged in' }
+          {this.state.currentUser ? <AccountOverview logOutUser={this.logOutUser} userInfo = {this.state.currentUser}/> : null }
         </div>
       </Router>
     )
