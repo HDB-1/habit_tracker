@@ -1,3 +1,6 @@
+README
+======
+
 # BRIEF
 Lap 3 : Portfolio Week Project For the rest of the week you will be working to create a habit tracker.
 
@@ -65,3 +68,12 @@ Your website should have the following technical functionality:
 - Axios
 - Async await
 - Mongoose
+
+## The website 
+
+![alt text](/pics/listpage.png) <br>
+Sign up page <br>
+![Github logo](/pics/listpage.png)<br>
+List of activities page
+
+
