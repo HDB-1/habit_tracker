@@ -70,7 +70,7 @@ export class App extends Component {
     return (
       <Router>
         <div className='app'>
-          <h1>Welcome to your favorite habit tracker!</h1>
+          <h1>Habit your way!</h1>
           {!this.state.currentUser && this.state.incorrectLoginProvided ? (
             <h3 className="wrongLoginBanner">Wrong login details provided! Please try again.</h3>
           ) : null}

@@ -93,7 +93,7 @@ export class accountOverview extends Component {
                 <button type="button" name="logOutButton" onClick={this.props.logOutUser}>Log out</button>
                 {this.state.displayAddActivityComponent ? null : 
                 <div>
-                <h1>Welcome {this.props.userInfo.fn} {this.props.userInfo.ln}</h1>
+                <h1>Welcome, {this.props.userInfo.fn} {this.props.userInfo.ln}</h1>
                 <h1>Activities:</h1>
                 {this.state.allActivities ? <Tasks activitiesArray = {this.state.allActivities}/> : null}
                 </div>
