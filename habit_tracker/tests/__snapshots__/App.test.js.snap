@@ -14,7 +14,6 @@ exports[`shallow app should render correctly 1`] = `
     <Signup
       signup={[Function]}
     />
-    not currently logged in
   </div>
 </Component>
 `;
