@@ -71,9 +71,9 @@ Your website should have the following technical functionality:
 
 ## The website 
 
-![alt text](/pics/listpage.png) <br>
+![Alt Text](startpage.png) <br>
 Sign up page <br>
-![Github logo](/pics/listpage.png)<br>
+![Github logo](listpage.png) <br>
 List of activities page
 
 
