@@ -18,6 +18,24 @@ const data = [{
     ln: 'de Blaby',
     username: 'hdeb44',
     password: 'abcd'
+},
+{
+    fn: 'Michael',
+    ln: 'Laird',
+    username: 'ml100',
+    password: 'qwerty'
+},
+{
+    fn: 'Dom',
+    ln: 'McDonnell',
+    username: 'the_dominator',
+    password: 'coderlyfe'
+},
+{
+    fn: 'Josh',
+    ln: 'Torbett',
+    username: 'jtrigger',
+    password: 'glock'
 }]
 
 mongoClient.connect(url, function(err, db) {

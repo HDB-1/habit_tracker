@@ -101,7 +101,10 @@ export class accountOverview extends Component {
                 {this.state.displayAddActivityComponent ? 
                 <AddActivity addNewActivity = {this.addNewActivity}/> : 
                 <button type="button" onClick={this.displayAddActivityComponent}>Add activity</button>}
-                <button type="button" onClick={() => this.updateActivityStreaks(this.state.allActivities)}>Click here to update streaks</button>
+                {!this.state.displayAddActivityComponent ? 
+                <button type="button" onClick={() => this.updateActivityStreaks(this.state.allActivities)}>Click here to update streaks</button>:
+                null}
+
             </div>
         )
     }
